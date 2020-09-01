@@ -1,4 +1,8 @@
-li {
+body{
+  margin: 15rem;
+}
+
+ul {
   padding: 5px;
   margin: 5px;
   background: #faebd7;
