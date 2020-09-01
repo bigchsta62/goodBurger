@@ -1,0 +1,30 @@
+{
+  "name": "goodburger",
+  "version": "1.0.0",
+  "description": "Eat Burgers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigchsta62/goodBurger.git"
+  },
+  "keywords": [
+    "burgers",
+    "food",
+    "eat"
+  ],
+  "author": "bigchsta62",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bigchsta62/goodBurger/issues"
+  },
+  "homepage": "https://github.com/bigchsta62/goodBurger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "handlebars": "^4.7.6",
+    "mysql": "^2.18.1"
+  }
+}
