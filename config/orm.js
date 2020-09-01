@@ -5,14 +5,12 @@ const connection = require("./connection.js");
 // =============================================================
 
 function printQuestionMarks(num) {
-    const arr = [];
-  
-    for (let i = 0; i < num; i++) {
-      arr.push("?");
-    }
-  
-    return arr.toString();
+  const arr = [];
+  for (let i = 0; i < num; i++) {
+    arr.push("?");
   }
+  return arr.toString();
+}
 
 const tableName = "burgers";
 
@@ -30,29 +28,22 @@ const orm = {
   // Here our ORM is creating a simple method for performing a query of a single character in the table.
   // Again, we make use of the callback to grab a specific character from the database.
 
-  insertOne: function (tableName, cols, vals, callback) {
-    const s = "INSERT INTO " + tableName;
+  insertOne: function (burger_name, callback) {
+    let s = "INSERT INTO burgers (burger_name, devoured) VALUES ('" + `${burger_name}` + "',false)";
 
-    s += " (";
-    s += cols.toString();
-    s += ") ";
-    s += "VALUES (";
-    s += printQuestionMarks(vals.length);
-    s += ") ";
-
-    console.log(queryString);
-    connection.query(s, [action.text, action.complete], function (err, result) {
+    console.log(s);
+    connection.query(s, [`${burger_name}`], function (err, result) {
       callback(result);
     });
   },
 
-  updateOne: function (action, callback) {
-    const s = "UPDATE " + tableName + " SET text=? WHERE id=?";
+  // updateOne: function (action, callback) {
+  //   const s = "UPDATE " + tableName + " SET text=? WHERE id=?";
 
-    connection.query(s, [action.text, action.id], function (err, result) {
-      callback(result);
-    });
-  },
+  //   connection.query(s, [action.text, action.id], function (err, result) {
+  //     callback(result);
+  //   });
+  // },
 };
 
 module.exports = orm;

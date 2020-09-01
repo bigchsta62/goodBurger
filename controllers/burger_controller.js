@@ -18,20 +18,22 @@ router.get("/", function (req, res) {
 
 //add new burger
 router.post("/api/burgers", function (req, res) {
-  burger.insertOne(["burgers"], [req.body.name], function (result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+  burger.insertOne(req.body.burgerName, function (data) {
+    // Send back the ID of the new burger
+    res.json({ id: data.insertId });
+    console.log(data);
+    console.log(req.body.burgerName + "this guy");
   });
 });
 
-router.put("/api/cats/:id", function (req, res) {
+router.put("/api/burgers/:id", function (req, res) {
   const condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
   burger.updateOne(
     {
-      sleepy: req.body.sleepy,
+      devoured: req.body.devour,
     },
     condition,
     function (result) {
