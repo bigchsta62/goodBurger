@@ -1,11 +1,43 @@
-body{
-  margin: 15rem;
+body {
+  padding: 30px;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.card {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+#left {
+ padding-left: 35px;
+}
+#right {
+ padding-left: 35px;
+}
+.card {
+  background-color: rgba(240, 248, 255, 0);
 }
 
 ul {
-  padding: 5px;
+  padding: 10px;
   margin: 5px;
-  background: #faebd7;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite; */
 }
 
 .label {

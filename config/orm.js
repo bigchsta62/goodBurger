@@ -12,6 +12,28 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
+function objToSql(ob) {
+  const arr = [];
+
+  // loop through the keys and push the key/value as a string int arr
+  for (let key in ob) {
+    let value = ob[key];
+    // check to skip hidden properties
+    if (Object.hasOwnProperty.call(ob, key)) {
+      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = "'" + value + "'";
+      }
+      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+      // e.g. {sleepy: true} => ["sleepy=true"]
+      arr.push(key + "=" + value);
+    }
+  }
+
+  // translate array of strings to a single comma-separated string
+  return arr.toString();
+}
+
 const tableName = "burgers";
 
 const orm = {
@@ -29,7 +51,10 @@ const orm = {
   // Again, we make use of the callback to grab a specific character from the database.
 
   insertOne: function (burger_name, callback) {
-    let s = "INSERT INTO burgers (burger_name, devoured) VALUES ('" + `${burger_name}` + "',false)";
+    const s =
+      "INSERT INTO burgers (burger_name, devoured) VALUES ('" +
+      `${burger_name}` +
+      "',false)";
 
     console.log(s);
     connection.query(s, [`${burger_name}`], function (err, result) {
@@ -37,13 +62,20 @@ const orm = {
     });
   },
 
-  // updateOne: function (action, callback) {
-  //   const s = "UPDATE " + tableName + " SET text=? WHERE id=?";
-
-  //   connection.query(s, [action.text, action.id], function (err, result) {
-  //     callback(result);
-  //   });
-  // },
+  updateOne: function (status, condition, callback) {
+    JSON_QUERY(status);
+    let s = "UPDATE " + tableName + " SET "
+    s += JSON.query(status);
+    s += " WHERE ";
+    s += condition;
+    console.log(s);
+    connection.query(s, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      callback(result);
+    });
+  },
 };
 
 module.exports = orm;

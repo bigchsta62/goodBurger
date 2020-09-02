@@ -26,8 +26,8 @@ $(function() {
 		}
 	});
 
-	// eating a burger
-	$(".btn").on("click", function() {
+	// eating the burger
+	$(".eat").on("click", function() {
 		var id = $(this).data("id");
 
 		$.ajax("/api/burgers/" + id, {
@@ -41,8 +41,8 @@ $(function() {
       	});
 	});
 
-	// ordering another burger
-	$(".btn").on("click", function() {
+	// burger me again
+	$(".re").on("click", function() {
 		var id = $(this).data("id");
 
 		$.ajax("/api/burgers/" + id, {
