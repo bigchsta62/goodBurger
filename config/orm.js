@@ -63,12 +63,12 @@ const orm = {
   },
 
   updateOne: function (status, condition, callback) {
-    JSON_QUERY(status);
+   
     let s = "UPDATE " + tableName + " SET "
-    s += JSON.query(status);
+    s += status;
     s += " WHERE ";
     s += condition;
-    console.log(s);
+    console.log(condition);
     connection.query(s, function (err, result) {
       if (err) {
         throw err;
