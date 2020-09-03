@@ -8,5 +8,6 @@ INSERT INTO burgers (burger_name, devoured) VALUES ('The "Dear Amanda" hold the 
 INSERT INTO burgers (burger_name) VALUES ("Spatch's Special");
 
 
+SELECT * FROM burgers;
 
 -- 4. Run the `schema.sql` and `seeds.sql` files into the mysql server from the command line
