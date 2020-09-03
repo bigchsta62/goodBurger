@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
-const { json } = require("express");
+
 
 // default Route -- display all burgers
 router.get("/", function (req, res) {
@@ -22,7 +22,7 @@ router.post("/api/burgers", function (req, res) {
   burger.insertOne(req.body.burgerName, function (data) {
     // Send back the ID of the new burger
     res.json({ id: data.insertId });
-    console.log(data);
+    console.log(data.insertId);
     console.log(req.body.burgerName + " this guy");
   });
 });
