@@ -1,3 +1,4 @@
 node_modules
 delete_readme
 
+.env
