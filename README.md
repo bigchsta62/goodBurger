@@ -3,7 +3,7 @@ Welcome to Good Burger, home of the Good Burger! Can I take your order?
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## This application helps you keep track of your notes.
+## This application lets you order Good Burgers
 
 * [Installation](#installation)
 * [Usage](#usage)
