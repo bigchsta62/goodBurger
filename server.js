@@ -24,6 +24,7 @@ app.use(routes);
 //static files
 app.use(express.static("./public"));
 
+
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started

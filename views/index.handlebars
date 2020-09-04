@@ -1,49 +1,50 @@
-<h1>Good Burgers!</h1>
 
-<form class="create-form">
+<nav class="navbar justify-content-center">
+   <form class="create-form">
+    <h3>Welcome to Good Burger, home of the Good Burger! Can I take your order?</h1>
+    <div class="form-group">
+      <input type="text" class="form-control" id="bname" placeholder="Yeah, um I'd like to order...">
+      <button class="btn btn-warning" type="submit" id="submit">Add Good Burger</button>
+  </form>
+</nav>
+<div class="container-fluid">
 
-  <div class="form-group">
-    <label for="ca">Welcome to Good Burger, home of the Good Burger! Can I take your order?</label>
-    <input type="text" class="form-control" id="bname" placeholder="Yeah, um I'd like to order...">
-  </div>
-  <button class="btn btn-primary" type="submit" id="submit">Add Good Burger</button>
-</form>
+  <div class="card-deck row">
+    <!-- burgers -->
+    <div class="card big col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <!-- left column -->
+      <h1 id="left">Order Up!</h1>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <div class="card little">
+          {{!-- <img src={{this.id}}"> --}}
+          <h2>{{burger_name}}</h2>
+          <button class="btn eat btn-warning" data-id="{{id}}" data-devour="{{devoured}}">
+            {{#if devoured}}Yum!{{else}}Eat Me!{{/if}}
+          </button>
+        </div>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div> <!-- left column -->
 
-<div class="card-deck row">
-  <!-- burgers -->
-  <div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <!-- left column -->
-    <h1 id="left">To Be Eaten...</h1>
-    <ul>
-      {{#each burgers}}
-      {{#unless devoured}}
-      <div class="card">
-        {{!-- <img src={{this.id}}"> --}}
-        <h2>{{burger_name}}</h2>
-      <button class="btn eat btn-secondary" data-id="{{id}}" data-devour="{{devoured}}">
-        {{#if devoured}}Yum!{{else}}Eat Me!{{/if}}
-      </button>
-      </div>
-      {{/unless}}
-      {{/each}}
-    </ul>
-  </div> <!-- left column -->
-
-  <div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <!-- right column -->
-    <h1 id="right">Already Devoured!</h1>
-    <ul>
-      {{#each burgers}}
-      {{#if devoured}}
-      <div class="card">
-        {{!-- <img src={{this.id}}"> --}}
-        <h2>{{burger_name}}</h2>
-        <button class="btn re btn-secondary" data-id="{{id}}" data-devour="{{devoured}}">
-        {{#if devoured}}Yum!{{else}}Eat Me!{{/if}}
-      </button>
-      </div>
-      {{/if}}
-      {{/each}}
-    </ul>
-  </div> <!-- right column -->
-</div> <!-- burgers row -->
+    <div class="card big col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <!-- right column -->
+      <h1 id="right">That was Good!</h1>
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <div class="card little">
+          {{!-- <img src={{this.id}}"> --}}
+          <h2>{{burger_name}}</h2>
+          <button class="btn re btn-warning" data-id="{{id}}" data-devour="{{devoured}}">
+            {{#if devoured}}Eat me AGAIN!{{else}}Eat Me!{{/if}}
+          </button>
+        </div>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div> <!-- right column -->
+  </div> <!-- burgers row -->
+</div>

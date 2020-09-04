@@ -1,43 +1,77 @@
 body {
-  padding: 30px;
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+ 
+  background-image: url(../img/Good\ Burger.jpg);
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.card {
-  background: linear-gradient(-135deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+.btn-warning {
+  border-radius: 30px;
+  font-weight: bolder;
+  font: outline;
+  font-size: larger;
+  color: white;
+  margin: 15px;
+  background: linear-gradient(-45deg, #f05425, #72e73c, #23abd5, #c48f00);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.btn:hover {
+  border-radius: 30px;
+  background-color: orange;
+  font: outline;
+  font-size: larger;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+h3{
+	font-size: 50px;
+	color: rgb(255, 255, 0);
+	text-shadow: 2px 2px 4px #000000;
+}
+h1 {
+	color: white;
+	
+	text-shadow: 2px 2px 4px #000000;
+}
+.form-control{
+	background-color: rgba(223, 112, 22, 0.671);
+	color: white;
+	
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+	
+}
+.big {
+  border-radius: 30px;
+  background-color: rgba(255, 255, 0, 0.459);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.little {
+  padding: 10px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 0, 0.459);
 }
 #left {
- padding-left: 35px;
+  padding-left: 35px;
 }
 #right {
- padding-left: 35px;
-}
-.card {
-  background-color: rgba(240, 248, 255, 0);
+  padding-left: 35px;
 }
 
 ul {
   padding: 10px;
   margin: 5px;
-  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite; */
 }
 
 .label {
