@@ -13,7 +13,7 @@ Welcome to Good Burger, home of the Good Burger! Can I take your order?
 
 
 ## Installation
-* To run this code locally, you with need to for the repo and install the following node modules:
+* To run this code locally, you with need to fork the repo and install the following node modules:
  
    *mysql - https://www.npmjs.com/package/mysql
   
