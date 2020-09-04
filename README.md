@@ -14,13 +14,14 @@ Welcome to Good Burger, home of the Good Burger! Can I take your order?
 
 ## Installation
 * To run this code locally, you with need to for the repo and install the following node modules:
-  *mysql - https://www.npmjs.com/package/mysql
+ 
+*mysql - https://www.npmjs.com/package/mysql
   
-  *express - https://www.npmjs.com/package/express
+*express - https://www.npmjs.com/package/express
   
-  *express-handlebars - https://www.npmjs.com/package/express-handlebars
+*express-handlebars - https://www.npmjs.com/package/express-handlebars
    
-  * To deploy this yourself on heroku, you will need to use an online "database as a service" such as:
+* To deploy this yourself on heroku, you will need to use an online "database as a service" such as:
      https://www.jawsdb.com/
    
    
