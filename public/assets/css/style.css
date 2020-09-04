@@ -23,6 +23,7 @@ body {
   font: outline;
   font-size: larger;
   color: white;
+  text-shadow: 2px 2px 4px #000000;
   margin: 15px;
   background: linear-gradient(-45deg, #f05425, #72e73c, #23abd5, #c48f00);
   background-size: 400% 400%;
@@ -35,6 +36,7 @@ body {
   font: outline;
   font-size: larger;
   color: white;
+  text-shadow: 2px 2px 4px #000000;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 h3 {
@@ -47,6 +49,10 @@ h1 {
 
   text-shadow: 2px 2px 4px #000000;
 }
+.form-control::placeholder {
+	color: white;
+	text-shadow: 2px 2px 4px #000000
+  }
 .form-control {
   background-color: rgba(223, 112, 22, 0.671);
   color: white;
